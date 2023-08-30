@@ -1,5 +1,6 @@
-"Name","Program","Location","Arguments"
-"Name of Program","Program.exe or Program.lnk","Drive:\Folder\Path\To\Program","Argument or delete"
-"ProgramName","Program.exe","C:\ProgramLocation","-silent true"
-"Program2","Program2.exe","C:\ProgramLocation\Subfolder",""
-"Discord","Update.exe","$env:LOCALAPPDATA\Discord","--processStart Discord.exe"
+Name,Program,Location,Arguments
+Discord,Update.exe,$env:LOCALAPPDATA\Discord,--processStart Discord.exe
+VoicemodDesktop,VoicemodDesktop.exe,D:\Apps\Voicemod Desktop
+OBS64,obs64.exe,D:\Stream\obs-studio\bin\64bit
+Chatty,Chatty.exe,D:\Stream\Chatty
+Deckboard,Deckboard.exe,D:\Stream\Deckboard
