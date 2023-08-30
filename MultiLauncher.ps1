@@ -1,12 +1,17 @@
 ﻿#Set-PSDebug -Trace 1
 
+#Testing if the setting file exists
 if (-not (Test-Path -Path '.\MLauncher.csv')) {
+
+    #Contents of sample file containing examples of with and without arguments, environment variables, program names different than exe, etc.
     $sample = @(
         [pscustomobject]@{Name="Name of Program"; Program="Program.exe or Program.lnk"; 'Location'="Drive:\Folder\Path\To\Program"; Arguments="Argument or delete"},
         [pscustomobject]@{Name="ProgramName"; Program="Program.exe"; Location="C:\ProgramLocation"; Arguments="-silent true"},
         [pscustomobject]@{Name="Program2"; Program="Program2.exe"; Location="C:\ProgramLocation\Subfolder"; Arguments=""},
         [pscustomobject]@{Name="Discord"; Program="Update.exe"; Location='$env:LOCALAPPDATA\Discord'; Arguments="--processStart Discord.exe"}
     )
+    
+    #Wite out sample, opens location where example was written   
     $sample | Export-CSV -Path .\MLauncher.csv -NoTypeInformation
     Write-Output("MLauncher.csv created, add programs to run")
     explorer .\
@@ -15,7 +20,6 @@ if (-not (Test-Path -Path '.\MLauncher.csv')) {
 }
 
 $programList = Import-CSV .\MLauncher.csv
-
 $curRunning = Get-Process
 
 #Loop through each program
