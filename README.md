@@ -9,10 +9,10 @@ Simple PowerShell-based helper program to help ensure programs are running
   <li>Run the script or program to create the initial CSV file. </li>
   <li>Open the CSV in your choice of editor, list programs in the format: </li>
 <ul>
-  <li>"Name" = The name of the program in Task manager</li>
-  <li>"Program" = the .lnk or .exe file to run</li>
-  <li>"Location" = the location of the file, use "$env:" syntax if including environment variables</li>
-  <li>"Arguments" = Optional, starting arguments applied to the executable or shortcut</li>
+  <li>Name: The name of the program in Task manager</li>
+  <li>Program: the .lnk or .exe file to run</li>
+  <li>Location: the location of the file, use "$env:" syntax if including environment variables</li>
+  <li>Arguments: Optional, starting arguments applied to the executable or shortcut</li>
 </ul></ol>
 
 # Subsequent Launch
