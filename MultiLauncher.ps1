@@ -19,8 +19,7 @@ $programList = Import-CSV .\MLauncher.csv
 $curRunning = Get-Process
 
 #Loop through each program
-foreach ($Program in $programList)
-{
+foreach ($Program in $programList) {
 	#Set variables for current program
     $curName = $Program.Name
     $curExe = $Program.Program
