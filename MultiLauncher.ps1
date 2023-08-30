@@ -1,21 +1,20 @@
 ﻿#Set-PSDebug -Trace 1
 
-if (-not (Test-Path -Path '.\Startup.csv')) {
+if (-not (Test-Path -Path '.\MLauncher.csv')) {
     $sample = @(
         [pscustomobject]@{Name="Name of Program"; Program="Program.exe or Program.lnk"; 'Location'="Drive:\Folder\Path\To\Program"; Arguments="Argument or delete"},
         [pscustomobject]@{Name="ProgramName"; Program="Program.exe"; Location="C:\ProgramLocation"; Arguments="-silent true"},
         [pscustomobject]@{Name="Program2"; Program="Program2.exe"; Location="C:\ProgramLocation\Subfolder"; Arguments=""},
         [pscustomobject]@{Name="Discord"; Program="Update.exe"; Location='$env:LOCALAPPDATA\Discord'; Arguments="--processStart Discord.exe"}
     )
-    #ConvertTo-Json -InputObject $sample | Out-File -FilePath Startup.json
-    $sample | Export-CSV -Path .\startup.csv -NoTypeInformation
-    Write-Output("Startup.csv created, add programs to run")
+    $sample | Export-CSV -Path .\MLauncher.csv -NoTypeInformation
+    Write-Output("MLauncher.csv created, add programs to run")
     explorer .\
     pause
     exit
 }
 
-$programList = Import-CSV .\startup.csv
+$programList = Import-CSV .\MLauncher.csv
 
 $curRunning = Get-Process
 
