@@ -1,0 +1,5 @@
+"Name","Program","Location","Arguments"
+"Name of Program","Program.exe or Program.lnk","Drive:\Folder\Path\To\Program","Argument or delete"
+"ProgramName","Program.exe","C:\ProgramLocation","-silent true"
+"Program2","Program2.exe","C:\ProgramLocation\Subfolder",""
+"Discord","Update.exe","$env:LOCALAPPDATA\Discord","--processStart Discord.exe"
