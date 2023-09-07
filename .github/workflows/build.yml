@@ -36,16 +36,7 @@ jobs:
         run: |
           ps2exe MultiLauncher.ps1 .\
 
-      - name: Archive production artifacts
-        uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v3
         with:
-          Name: build-artifact
-          path: |
-            .
-            !./*.exe
-      
-      - name: Upload build artifact
-        uses: action/artifact@v3
-        with:
-          name: Build
-          path: ./MultiLauncher.exe
+            name: MultiLauncher
+            path: MultiLauncher.exe   
