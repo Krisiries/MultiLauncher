@@ -25,13 +25,19 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
       
-      - name: Install PSScriptAnalyzer module
+      - name: Install PS2exe module
         shell: powershell
         run: |
           Set-PSRepository PSGallery -InstallationPolicy Trusted
           Install-Module ps2exe
 
-      - name: Run a multi-line script
+      - name: Build Exe File
         shell: powershell
         run: |
           ps2exe MultiLauncher.ps1 .\
+
+      - name: Upload build artifact
+        uses: action/artifact@v3
+        with:
+          name: Build
+          path: .\MultiLauncher.exe
